@@ -1,0 +1,26 @@
+# Controle de acesso:
+* Administrador
+ - aceesso total
+* Gerente
+ - Buscar contas
+ - vizualizar contas
+ - modificar  contas
+ - fechar contas
+ - bloquear contas
+ - abrir contas
+* Cliente
+ - vizualizar a propria conta 
+ - atualizar dados na propria conta
+ - depositar dinheiro
+ - sacar dinheiro da propria conta
+ - solicitar fechamento da propria conta
+
+ # Conta Bancaria
+ # Agencia
+ # Endereço
+ # transações
+
+ Banco de dados:
+ 
+* Pessoas 
+* Cargos
