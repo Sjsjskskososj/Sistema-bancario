@@ -1,8 +1,16 @@
-class agencies{
-     index(){ // retorna a lista de todas as informações
+class Agencies{
+    static index(req){ 
+        // retorna a lista de todas as informações
+        return [
+            {
+                nome: "Bradesco",
+                numero: 237,
+                endereco: "Rua do Bradesco, 123 - São Paulo - SP"
+            },
+        ];
 
     }
-
+    
     get(){ // pega apenas um regitro
 
     }
@@ -18,3 +26,4 @@ class agencies{
 
     }
 }
+module.exports = Agencies;

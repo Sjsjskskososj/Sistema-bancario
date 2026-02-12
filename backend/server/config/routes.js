@@ -1,10 +1,19 @@
-const People = require('../controllers/people')
+const People = require('../controllers/people');
+const Agencies = require('../controllers/agency');
+const Accounts = require('../controllers/accounts');
+const Transactions = require('../controllers/transactions');
+
+console.log("importando rotas")
 
 class Routes{
     constructor (express){
+        console.log("criando")
         // criacao das rotas get do diretorio home
         this.home_get(express)
         this.people_routes(express)
+        this.agency_routes(express)
+        this.accounts_routes(express)
+        // this.transactions_routes(express)   
     }
     
 
@@ -21,6 +30,17 @@ class Routes{
             res.send(JSON.stringify(People.index(req)))
        })
     }
-}
 
+    agency_routes(express){
+        express.get("/agencies/", (req,res)=> { 
+            res.send(JSON.stringify(Agencies.index(req)))
+       })
+
+    }
+    accounts_routes(express){
+        express.get("/acounts/", (req,res)=> { 
+            res.send(JSON.stringify(Accounts.index(req)))
+       })
+    }   
+}
 module.exports = Routes

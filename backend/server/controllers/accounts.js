@@ -1,18 +1,17 @@
-class Transactions{
+class Accounts{
     static index(req){ 
         // retorna a lista de todas as informações
         return [
             {
-                valor: 100,
-                data: "2024-06-01",
-                tipo: "depósito",
-                conta_origem: "12345-6",
-                conta_destino: "65432-1"
+                numero: "12345-6",
+                agencia: "237",
+                titular: "Jean Clebs",
+                saldo: 1000.00
             },
         ];
 
     }
-
+    
     get(){ // pega apenas um regitro
 
     }
@@ -28,4 +27,4 @@ class Transactions{
 
     }
 }
-module.exports = Transactions;
+module.exports = Accounts;
