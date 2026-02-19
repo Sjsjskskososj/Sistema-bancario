@@ -14,4 +14,11 @@ const SCHEMA_ACCOUNT = mongoose.Schema({
         type: Date,
         default: Date.now,
     },
+    person:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'people',
+        required: [true, "A pessoa é obrigatória"],
+    }
 })
+
+module.exports = mongoose.model('accounts', SCHEMA_ACCOUNT, 'accounts');

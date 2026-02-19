@@ -12,4 +12,11 @@ const SCHEMA_RULE = mongoose.Schema({
         minlength: [10, "A descrição deve conter no mínimo 10 caracteres"],
         required: [true, "A descrição da regra é obrigatória"],
     },
+    positions: [{
+        type: [mongoose.Schema.Types.ObjectId],
+        ref: 'positions',
+        required: [true, "As posições são obrigatórias"],
+    }],
 })
+
+module.exports = mongoose.model('rules', SCHEMA_RULE, 'rules');

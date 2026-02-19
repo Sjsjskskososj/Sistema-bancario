@@ -27,4 +27,27 @@ const SCHEMA_PERSON= mongoose.Schema({
         minlength: [4, "O email deve conter no mínimo 4 caracteres"],
         required: [true, "O email é obrigatório"],
     },
+    password: {
+        type: String,
+        minlength: [8, "A senha deve conter no mínimo 8 caracteres"],
+        required: [true, "A senha é obrigatória"],
+        select: false,
+    },
+
+    address: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'addresses',
+        required: [true, "O endereço é obrigatório"],
+    },
+    position: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'positions',
+        required: [true, "A posição é obrigatória"],
+    },
+    accounts: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'accounts',
+    }],
 })
+
+module.exports = mongoose.model('people', SCHEMA_PERSON);

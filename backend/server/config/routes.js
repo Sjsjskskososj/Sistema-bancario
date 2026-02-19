@@ -27,6 +27,12 @@ class Routes{
 
     people_routes(express){
         express.get("/people/", (req,res)=> { 
+            People.index(req).then((result)=>{
+                res.send(JSON.stringify(result))
+            })
+
+
+
             res.send(JSON.stringify(People.index(req)))
        })
     }

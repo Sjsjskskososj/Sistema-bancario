@@ -1,14 +1,11 @@
-class People{
-    static index(req){ 
-        // retorna a lista de todas as informações
-        return [
-            {
-                nome: "Jean Clebs",
-                idade: 67,
-                profissao:"Gogo boy"
-            },
-        ];
+const PersonModel = require('../models/people');
 
+
+class People{
+    static async index(req){ 
+        // retorna a lista de todas as informações
+        let people = PersonModel.find({})
+        return people
     }
 
     get(){ // pega apenas um regitro

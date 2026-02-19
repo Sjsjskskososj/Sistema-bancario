@@ -11,7 +11,19 @@ const SCHEMA_POSITION = mongoose.Schema({
         type: Number,
         required: [true, "O pagamento é obrigatório"],
     },
-
+    rules:[{
+        type: [mongoose.Schema.Types.ObjectId],
+        ref: 'rules',
+        required: [true, "As regras são obrigatórias"],
+    }],
+    people: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'people',
+        }
+    ]
 
 
 })
+
+module.exports = mongoose.model('positions', SCHEMA_POSITION, 'positions');
