@@ -13,7 +13,7 @@ class Routes{
         this.people_routes(express)
         this.agency_routes(express)
         this.accounts_routes(express)
-        // this.transactions_routes(express)   
+        this.Transactions_routes(express)
     }
     
 
@@ -42,5 +42,10 @@ class Routes{
             res.send(JSON.stringify(Accounts.index(req)))
        })
     }   
+    Transactions_routes(express){
+        express.get("/transactions/", (req,res)=> { 
+            res.send(JSON.stringify(Transactions.index(req)))
+       })
+    }
 }
 module.exports = Routes
